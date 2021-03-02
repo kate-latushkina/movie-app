@@ -1,9 +1,10 @@
 import React from "react";
-import AddMovie from "../AddMovie/AddMovie";
+import AddMovieButton from "../AddMovieButton/AddMovieButton";
 import SearchMovie from "../SearchMovie/SearchMovie";
 import styled from "styled-components";
 import { Box, Container } from "@material-ui/core";
 import Logo from "../Logo/Logo";
+import colors from "../../../variables/colors";
 
 const Header: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Header: React.FC = () => {
       <Container maxWidth="lg">
         <Box justifyContent="space-between" display="flex">
           <Logo />
-          <AddMovie />
+          <AddMovieButton />
         </Box>
         <Container maxWidth="md">
           <Headline>Find your movie</Headline>
@@ -25,14 +26,14 @@ const Header: React.FC = () => {
 const Headline = styled.h2`
   text-transform: uppercase;
   font-weight: 100;
-  color: white;
+  color: ${colors.white};
 `;
 
 const HeaderSection = styled.div`
   width: 100%;
-  background-color: #593158;
+  background-color: ${colors.darkViolet};
   padding: 20px 0 100px;
-  border-bottom: 10px solid #555555;
+  border-bottom: 10px solid ${colors.lightGrey};
 `;
 
 export default Header;

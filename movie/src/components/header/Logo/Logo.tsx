@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import colors from "../../../variables/colors";
 
 const Logo: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Logo: React.FC = () => {
 };
 
 const LogoColor = styled.div`
-  color: #f65261;
+  color: ${colors.pink};
 `;
 
 export default Logo;
