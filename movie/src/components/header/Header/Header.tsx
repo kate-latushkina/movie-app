@@ -1,38 +1,42 @@
 import React from "react";
-import AddMovie from "../AddMovie/AddMovie";
+import AddMovieButton from "../AddMovieButton/AddMovieButton";
 import SearchMovie from "../SearchMovie/SearchMovie";
 import styled from "styled-components";
-import { Box, Container } from "@material-ui/core";
+import { Box, Grid } from "@material-ui/core";
 import Logo from "../Logo/Logo";
+import colors from "../../../variables/colors";
 
 const Header: React.FC = () => {
   return (
-    <HeaderSection>
-      <Container maxWidth="lg">
-        <Box justifyContent="space-between" display="flex">
-          <Logo />
-          <AddMovie />
-        </Box>
-        <Container maxWidth="md">
-          <Headline>Find your movie</Headline>
-          <SearchMovie />
-        </Container>
-      </Container>
-    </HeaderSection>
+    <HeaderColored>
+      <Box justifyContent="space-between" display="flex">
+        <Logo />
+        <AddMovieButton />
+      </Box>
+      <SearchPanel>
+        <Headline>Find your movie</Headline>
+        <SearchMovie />
+      </SearchPanel>
+    </HeaderColored>
   );
 };
 
 const Headline = styled.h2`
   text-transform: uppercase;
   font-weight: 100;
-  color: white;
+  color: ${colors.white};
 `;
 
-const HeaderSection = styled.div`
+const SearchPanel = styled(Grid)`
+  padding: 0 10%;
+`;
+
+const HeaderColored = styled(Grid)`
   width: 100%;
-  background-color: #593158;
-  padding: 20px 0 100px;
-  border-bottom: 10px solid #555555;
+  background-color: ${colors.darkViolet};
+  padding: 20px 15% 100px;
+  box-sizing: border-box;
+  border-bottom: 10px solid ${colors.lightGrey};
 `;
 
 export default Header;
