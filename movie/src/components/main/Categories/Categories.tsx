@@ -1,6 +1,5 @@
 import { Tabs, Tab, Theme, makeStyles } from "@material-ui/core";
 import React from "react";
-import "./Categories.scss";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -23,7 +22,6 @@ const Categories: React.FC = () => {
       indicatorColor="primary"
       textColor="primary"
       onChange={handleChange}
-      aria-label="disabled tabs example"
       className="categories"
     >
       {categoriesArray.map((category, index) => (

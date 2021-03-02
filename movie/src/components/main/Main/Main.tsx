@@ -1,4 +1,4 @@
-import { Container } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 import Categories from "../Categories/Categories";
@@ -6,19 +6,17 @@ import Sorting from "../Sorting/Sorting";
 
 const Main: React.FC = () => {
   return (
-    <Container maxWidth="lg">
-      <CategorySection>
-        <Categories />
-        <Sorting />
-      </CategorySection>
-    </Container>
+    <CategoryContainer>
+      <Categories />
+      <Sorting />
+    </CategoryContainer>
   );
 };
 
-const CategorySection = styled.div`
-  height: 60px;
+const CategoryContainer = styled(Grid)`
   display: flex;
   justify-content: space-between;
+  padding 0 15%;
 `;
 
 export default Main;
