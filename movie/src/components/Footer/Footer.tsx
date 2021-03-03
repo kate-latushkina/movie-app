@@ -2,7 +2,7 @@ import { Grid } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 import colors from "../../variables/colors";
-import Logo from "../header/Logo/Logo";
+import Logo from "../Header/Logo/Logo";
 
 const Footer: React.FC = () => {
   return (
