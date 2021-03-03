@@ -8,5 +8,4 @@ const AddMovieButton: React.FC = () => {
   );
 };
 
-
 export default AddMovieButton;
