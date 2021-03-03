@@ -26,10 +26,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "commit": "yarn format:staged",
+    "commit": "yarn format:staged & jest & cz",
+    "cz": "yarn commit",
     "lint:eslint": "eslint . --ext .ts,.js,.tsx,.jsx",
     "lint:eslint:fix": "eslint . --ext .ts,.js,.tsx,.jsx --fix",
-    "format:stagged": "pretty-quick \"src/**/*.(js|jsx|ts|tsx|css|scss)\" --staged"
+    "format:staged": "pretty-quick \"src/**/*.(js|jsx|ts|tsx|css|scss)\" --staged"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +52,7 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.7",
+    "commitizen": "^4.2.3",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "2.2.1"
