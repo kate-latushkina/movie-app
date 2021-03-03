@@ -4,9 +4,6 @@ module.exports = {
     "airbnb/hooks",
     "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
-    "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
   ],
   plugins: ["react", "@typescript-eslint", "jest"],
@@ -30,11 +27,19 @@ module.exports = {
   },
   rules: {
     "linebreak-style": "off",
+    "@typescript-eslint/quotes": [2, "double"],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
     "prettier/prettier": [
       "error",
       {
         endOfLine: "auto",
       },
+    ],
+    "import/prefer-default-export": "off",
+    "@typescript-eslint/no-use-before-define": ["off"],
+    "no-use-before-define": [
+      "off",
+      { function: false, classes: false, variables: false },
     ],
   },
 };

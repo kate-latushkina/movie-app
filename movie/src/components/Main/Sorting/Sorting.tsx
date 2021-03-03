@@ -3,7 +3,6 @@ import {
   Select,
   InputLabel,
   Grid,
-  Theme,
   createStyles,
   makeStyles,
 } from "@material-ui/core";
@@ -12,13 +11,13 @@ import styled from "styled-components";
 
 const sortingBy = ["Release date", "Named", "Age"];
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
     select: {
       minWidth: 155,
       textTransform: "uppercase",
     },
-  })
+  }),
 );
 
 const Sorting: React.FC = () => {
@@ -28,8 +27,8 @@ const Sorting: React.FC = () => {
     <SortingSection>
       <SortLabel id="select-label">Sort by</SortLabel>
       <Select className={classes.select} defaultValue={sortingBy[0]}>
-        {sortingBy.map((name, index) => (
-          <Item value={name} key={index}>
+        {sortingBy.map(name => (
+          <Item value={name} key={name}>
             {name}
           </Item>
         ))}

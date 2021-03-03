@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 
 export default class Button extends Component {
   constructor(props) {
@@ -8,14 +8,15 @@ export default class Button extends Component {
   }
 
   handleClick() {
-    const prevCount = this.state.counter;
-    this.setState({ counter: prevCount + 1 });
+    const { counter } = this.state;
+    this.setState({ counter: counter + 1 });
   }
 
   render() {
-    if (this.state.counter === 3) {
+    const { counter } = this.state;
+    if (counter === 3) {
       throw new Error("Somthing went wrong!!!!!!!!!");
     }
-    return <h1 onClick={this.handleClick}>{this.state.counter}</h1>;
+    return <h1 onClick={this.handleClick}>{counter}</h1>;
   }
 }
