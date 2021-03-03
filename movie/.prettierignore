@@ -1,0 +1,11 @@
+# Ignore artifacts
+build
+coverage
+
+# Ignore files
+*.html
+.babelrc
+.eslintrc
+.prettierrc
+*config.json
+*config.js
