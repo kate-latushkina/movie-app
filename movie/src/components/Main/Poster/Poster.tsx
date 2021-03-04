@@ -16,12 +16,12 @@ const Poster: React.FC = () => {
 
   return (
     <>
-    <ul>
-      {movies.map((movie: any) => (
-        <li>{movie.title}</li>
-      ))}
-    </ul>
-    <span>Hello</span>
+      <div>
+        {movies.map(movie => {
+          <div>{movie}</div>;
+        })}
+      </div>
+      <span>Hello</span>
     </>
   );
 };
