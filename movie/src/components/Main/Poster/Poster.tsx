@@ -1,14 +1,14 @@
 import React from "react";
-import { PosterProps } from "./Poster.types";
+import { ImovieItem } from "./Poster.types";
 
-const Poster: React.FC = (props: PosterProps) => {
-  const { title, vote_average, overview, poster_path } = props;
+const Poster: React.FC = (props: ImovieItem) => {
+  const { name, vote, description, urlImg } = props;
   return (
     <>
-      <img src={poster_path} alt="poster" />
-      <h3>{title}</h3>
-      <span>{vote_average}</span>
-      <p>{overview}</p>
+      <img src={urlImg} alt="poster" />
+      <h3>{name}</h3>
+      <span>{vote}</span>
+      <p>{description}</p>
     </>
   );
 };

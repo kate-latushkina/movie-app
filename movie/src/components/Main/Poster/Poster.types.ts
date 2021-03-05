@@ -1,7 +1,10 @@
-export interface PosterProps {
+export type ImovieItem = {
   id: number;
-  overview: string;
-  poster_path: string;
-  title: string;
-  vote_average: number;
-}
+  description: string;
+  urlImg: string;
+  name: string;
+  vote: number;
+  date: string;
+};
+
+export type Tmovies = ImovieItem[];
