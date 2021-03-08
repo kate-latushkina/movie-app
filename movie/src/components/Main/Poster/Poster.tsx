@@ -1,16 +1,56 @@
+import { Grid, makeStyles, createStyles } from "@material-ui/core";
 import React from "react";
-import { ImovieItem } from "./Poster.types";
+import styled from "styled-components";
+import { ImovieItem } from "../../../interfaces/Poster.types";
+import { API_IMG } from "../../../variables/api";
+import colors from "../../../variables/colors";
 
-const Poster: React.FC = (props: ImovieItem) => {
-  const { name, vote, description, urlImg } = props;
+const useStyles = makeStyles(() =>
+  createStyles({
+    posterItem: {
+      maxWidth: "30%",
+      marginBottom: "30px",
+    },
+    posterImg: {
+      width: "100%",
+    },
+    releaseDate: {
+      border: `1px solid ${colors.darkGrey}`,
+      borderRadius: "5px",
+      color: colors.darkGrey,
+      fontSize: "16px",
+      padding: "5px 10px",
+    },
+  }),
+);
+
+const Poster: React.ComponentType<ImovieItem> = ({
+  title,
+  vote_average,
+  poster_path,
+  release_date,
+}: ImovieItem) => {
+  const classes = useStyles();
+
   return (
-    <>
-      <img src={urlImg} alt="poster" />
-      <h3>{name}</h3>
-      <span>{vote}</span>
-      <p>{description}</p>
-    </>
+    <Grid item xs={4} className={classes.posterItem}>
+      <img
+        src={API_IMG + poster_path}
+        alt={title}
+        className={classes.posterImg}
+      />
+      <MovieInfo>
+        <span>{title}</span>
+        <span className={classes.releaseDate}>{release_date?.slice(0, 4)}</span>
+      </MovieInfo>
+      <span>{vote_average}</span>
+    </Grid>
   );
 };
+
+const MovieInfo = styled(Grid)`
+  display: flex;
+  justify-content: space-between;
+`;
 
 export default Poster;

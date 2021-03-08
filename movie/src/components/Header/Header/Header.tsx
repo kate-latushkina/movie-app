@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Box, Grid } from "@material-ui/core";
-import AddMovieButton from "../AddMovieButton/AddMovieButton";
-import SearchMovie from "../SearchMovie/SearchMovie";
-import Logo from "../Logo/Logo";
+import AddMovieButton from "../AddMovieButton";
+import SearchMovie from "../SearchMovie";
+import Logo from "../Logo";
 import colors from "../../../variables/colors";
 
 const Header: React.FC = () => {
