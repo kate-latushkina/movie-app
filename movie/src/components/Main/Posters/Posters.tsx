@@ -14,8 +14,6 @@ const Posters: React.FC = () => {
       });
   }, []);
 
-  console.log(movies);
-
   return (
     <>
       {movies ? (
