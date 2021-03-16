@@ -1,9 +1,9 @@
 import { Grid, makeStyles, createStyles } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
-import { ImovieItem } from "../../../interfaces/Poster.types";
-import { API_IMG } from "../../../variables/api";
-import colors from "../../../variables/colors";
+import { ImovieItem } from "./Poster.types";
+import { API_IMG } from "../../../../variables/Api";
+import colors from "../../../../variables/colors";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -20,6 +20,10 @@ const useStyles = makeStyles(() =>
       color: colors.darkGrey,
       fontSize: "16px",
       padding: "5px 10px",
+      height: "20px",
+    },
+    title: {
+      paddingRight: "10px",
     },
   }),
 );
@@ -40,7 +44,7 @@ const Poster: React.ComponentType<ImovieItem> = ({
         className={classes.posterImg}
       />
       <MovieInfo>
-        <span>{title}</span>
+        <span className={classes.title}>{title}</span>
         <span className={classes.releaseDate}>{release_date?.slice(0, 4)}</span>
       </MovieInfo>
       <span>{vote_average}</span>

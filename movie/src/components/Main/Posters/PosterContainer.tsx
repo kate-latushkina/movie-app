@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
-import Poster from "../Poster";
-import { ImovieItem, Tmovies } from "../../../interfaces/Poster.types";
-import { API_URL } from "../../../variables/api";
+import { API_URL } from "../../../variables/Api";
+import Poster from "./components";
+import { ImovieItem, Tmovies } from "./components/Poster.types";
+import { Request } from "../../../variables/Request";
 
 const Posters: React.FC = () => {
   const [movies, setMovies] = useState<Tmovies>([]);
 
+  async function getMoviesArray() {
+    return setMovies(await Request.getRequest(API_URL));
+  }
+
   useEffect(() => {
-    fetch(API_URL)
-      .then(res => res.json())
-      .then(data => {
-        setMovies(data.results);
-      });
+    getMoviesArray();
   }, []);
 
   return (
