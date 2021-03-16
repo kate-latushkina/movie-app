@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { API_URL, addMovies } from "../../../variables/Api";
+import { addMovies } from "../../../variables/Api";
 import Poster from "./components";
 import { ImovieItem, Tmovies } from "./components/Poster.types";
 
@@ -7,10 +7,7 @@ const Posters: React.FC = () => {
   const [movies, setMovies] = useState<Tmovies>([]);
 
   useEffect(() => {
-    async function getMoviesArray() {
-      return setMovies(await addMovies);
-    }
-    getMoviesArray();
+    addMovies.then(res => setMovies(res));
   }, []);
 
   return (

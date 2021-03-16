@@ -6,9 +6,9 @@ const API_IMG = "https://image.tmdb.org/t/p/original";
 
 export { API_KEY, API_URL, API_IMG };
 
-export const { addMovies } = {
+export const { addMovies, sentMovie, deleteMovie, putMovie } = {
   addMovies: Request.getRequest(API_URL),
-  // sentMovie: Request.postRequest(API_URL),
-  // deleteMovie: Request.deleteRequest(API_URL),
-  // putMovie: Request.putRequest(API_URL),
+  sentMovie: Request.postRequest(API_URL, {}),
+  deleteMovie: Request.deleteRequest(API_URL, {}),
+  putMovie: Request.putRequest(API_URL, {}),
 };
