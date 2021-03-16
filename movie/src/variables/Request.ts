@@ -15,7 +15,7 @@ class Requests {
     return data;
   };
 
-  getRequest = async (url: string) => {
+  getRequest = (url: string) => {
     const params = {
       method: "GET",
     };
