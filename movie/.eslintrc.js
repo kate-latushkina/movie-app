@@ -41,5 +41,21 @@ module.exports = {
       "off",
       { function: false, classes: false, variables: false },
     ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        selector: "default",
+        format: [
+          "camelCase",
+          "strictCamelCase",
+          "PascalCase",
+          "StrictPascalCase",
+          "snake_case",
+          "UPPER_CASE",
+        ],
+        leadingUnderscore: "allow",
+        trailingUnderscore: "allow",
+      },
+    ],
   },
 };
