@@ -57,5 +57,6 @@ module.exports = {
         trailingUnderscore: "allow",
       },
     ],
+    "import/no-extraneous-dependencies": ["error", {"peerDependencies": true}]
   },
 };
