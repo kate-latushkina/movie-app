@@ -1,11 +1,11 @@
 import React from "react";
-import { Button } from "@material-ui/core";
+// import { Button } from "@material-ui/core";
 
 const AddMovieButton: React.FC = () => {
   return (
-    <Button variant="outlined" color="secondary">
+    <button type="button" className="but">
       + Add movie
-    </Button>
+    </button>
   );
 };
 
