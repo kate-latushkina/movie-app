@@ -6,7 +6,7 @@ module.exports = {
     "plugin:jest/recommended",
     "plugin:prettier/recommended",
   ],
-  plugins: ["react", "@typescript-eslint", "jest"],
+  plugins: ["react", "@typescript-eslint", "jest", "react-hooks"],
   env: {
     browser: true,
     es6: true,
@@ -57,6 +57,7 @@ module.exports = {
         trailingUnderscore: "allow",
       },
     ],
-    // "import/no-extraneous-dependencies": ["error", {"perDependencies": true}]
+    "react-hooks/exhaustive-deps": "off",
+    "import/no-extraneous-dependencies": ["warn"],
   },
 };
