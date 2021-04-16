@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header component should render Header snapshot 1`] = `
+<div
+  className="MuiGrid-root sc-jSgupP diGecc"
+>
+  <div
+    className="MuiBox-root MuiBox-root-1"
+  >
+    <div
+      className="MuiGrid-root sc-dlfnbm cbEZgv"
+    >
+      <b>
+        netflix
+      </b>
+      <span>
+        roulette
+      </span>
+    </div>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+      disabled={false}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        + Add movie
+      </span>
+    </button>
+  </div>
+  <div
+    className="MuiGrid-root sc-eCssSg lifcQa"
+  >
+    <h2
+      className="sc-hKgILt hZZqhi"
+    >
+      Find your movie
+    </h2>
+    <div
+      className="MuiGrid-root sc-bdfBwQ nKNBL MuiGrid-container MuiGrid-justify-xs-space-between"
+    >
+      <input
+        className="sc-gsTCUz gbGCtm search-panel_input"
+        placeholder="What do you want to watch?"
+      />
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained search-panel_button MuiButton-containedSecondary"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Search
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

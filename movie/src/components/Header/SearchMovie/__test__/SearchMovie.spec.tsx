@@ -1,5 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
+import renderer from "react-test-renderer";
 import SearchMovie from "../SearchMovie";
 import "../../../../setupTests";
 
@@ -17,5 +18,10 @@ describe("should render SearchMovie component", () => {
   it("should contain Input wrapper", () => {
     const wrapper = component.find(".search-panel_input");
     expect(wrapper.length).toBe(1);
+  });
+
+  it("should render SearchMovie snapshot", () => {
+    const wrapper = renderer.create(<SearchMovie />).toJSON();
+    expect(wrapper).toMatchSnapshot();
   });
 });

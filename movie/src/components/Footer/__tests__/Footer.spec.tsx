@@ -10,4 +10,9 @@ describe("should render Footer component", () => {
     const wrapper = renderer.create(<FooterSection />).toJSON();
     expect(wrapper).toHaveStyleRule("background-color", colors.darkGrey);
   });
+
+  it("should render FooterSection snapshot", () => {
+    const wrapper = renderer.create(<FooterSection />).toJSON();
+    expect(wrapper).toMatchSnapshot();
+  });
 });

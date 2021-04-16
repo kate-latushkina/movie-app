@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Footer component should render FooterSection snapshot 1`] = `
+.c1 {
+  color: #f65261;
+}
+
+.c0 {
+  background-color: #424242;
+  padding: 20px 0;
+}
+
+<div
+  className="MuiGrid-root c0 MuiGrid-container MuiGrid-justify-xs-center"
+>
+  <div
+    className="MuiGrid-root c1"
+  >
+    <b>
+      netflix
+    </b>
+    <span>
+      roulette
+    </span>
+  </div>
+</div>
+`;
