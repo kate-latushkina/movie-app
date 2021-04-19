@@ -2,7 +2,6 @@ import React from "react";
 import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import SearchMovie from "../SearchMovie";
-import "../../../../setupTests";
 
 describe("should render SearchMovie component", () => {
   let component: any;

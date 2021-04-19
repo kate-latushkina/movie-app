@@ -3,7 +3,6 @@ import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import { Tabs } from "@material-ui/core";
 import Categories from "../Categories";
-import "../../../../setupTests";
 
 describe("should render Categories component", () => {
   let component: any;

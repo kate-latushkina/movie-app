@@ -1,7 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import FooterSection from "../Footer";
-import "../../../setupTests";
 import colors from "../../../variables/colors";
 import "jest-styled-components";
 

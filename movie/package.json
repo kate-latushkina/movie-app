@@ -27,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --coverage",
+    "test": "react-scripts test --coverage",
     "eject": "react-scripts eject",
     "commit": "yarn format:staged & jest & cz",
     "cz": "yarn commit",

@@ -3,7 +3,6 @@ import { Button } from "@material-ui/core";
 import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import AddMovieButton from "../AddMovieButton";
-import "../../../../setupTests";
 
 describe("should render AddMovieButton component", () => {
   it("should contain Button wrapper", () => {

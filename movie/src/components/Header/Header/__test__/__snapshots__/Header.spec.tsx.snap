@@ -1,14 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Header component should render Header snapshot 1`] = `
+.c4 {
+  width: 100%;
+  height: 40px;
+}
+
+.c5 {
+  width: 70%;
+  height: 100%;
+  border-radius: 2px;
+  border: none;
+}
+
+.c1 {
+  color: #f65261;
+}
+
+.c3 {
+  text-transform: uppercase;
+  font-weight: 100;
+  color: #fff;
+}
+
+.c2 {
+  padding: 0 10%;
+}
+
+.c0 {
+  width: 100%;
+  background-color: #593158;
+  padding: 20px 15% 100px;
+  box-sizing: border-box;
+  border-bottom: 10px solid #555555;
+}
+
 <div
-  className="MuiGrid-root sc-jSgupP diGecc"
+  className="MuiGrid-root c0"
 >
   <div
     className="MuiBox-root MuiBox-root-1"
   >
     <div
-      className="MuiGrid-root sc-dlfnbm cbEZgv"
+      className="MuiGrid-root c1"
     >
       <b>
         netflix
@@ -42,18 +76,18 @@ exports[`should render Header component should render Header snapshot 1`] = `
     </button>
   </div>
   <div
-    className="MuiGrid-root sc-eCssSg lifcQa"
+    className="MuiGrid-root c2"
   >
     <h2
-      className="sc-hKgILt hZZqhi"
+      className="c3"
     >
       Find your movie
     </h2>
     <div
-      className="MuiGrid-root sc-bdfBwQ nKNBL MuiGrid-container MuiGrid-justify-xs-space-between"
+      className="MuiGrid-root c4 MuiGrid-container MuiGrid-justify-xs-space-between"
     >
       <input
-        className="sc-gsTCUz gbGCtm search-panel_input"
+        className="c5 search-panel_input"
         placeholder="What do you want to watch?"
       />
       <button

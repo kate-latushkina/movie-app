@@ -2,7 +2,6 @@ import React from "react";
 import { shallow } from "enzyme";
 import renderer from "react-test-renderer";
 import Logo from "../Logo";
-import "../../../../setupTests";
 
 describe("should render Logo component", () => {
   it("should contain bold text", () => {
