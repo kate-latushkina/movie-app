@@ -1,10 +1,10 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { shallow, ShallowWrapper } from "enzyme";
 import renderer from "react-test-renderer";
 import SearchMovie from "../SearchMovie";
 
 describe("should render SearchMovie component", () => {
-  let component: any;
+  let component: ShallowWrapper;
 
   beforeEach(() => {
     component = shallow(<SearchMovie />);
