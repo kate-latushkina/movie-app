@@ -20,13 +20,13 @@ const Main: React.FC = () => {
   );
 };
 
-const CategoryContainer = styled(Grid)`
+export const CategoryContainer = styled(Grid)`
   display: flex;
   justify-content: space-between;
   padding 0 15%;
 `;
 
-const PostersCategory = styled(Grid)`
+export const PostersCategory = styled(Grid)`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SearchMovie component should render SearchMovie snapshot 1`] = `
+<div
+  className="MuiGrid-root sc-bdfBwQ nKNBL MuiGrid-container MuiGrid-justify-xs-space-between"
+>
+  <input
+    className="sc-gsTCUz gbGCtm search-panel_input"
+    placeholder="What do you want to watch?"
+  />
+  <button
+    className="MuiButtonBase-root MuiButton-root MuiButton-contained search-panel_button MuiButton-containedSecondary"
+    disabled={false}
+    onBlur={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <span
+      className="MuiButton-label"
+    >
+      Search
+    </span>
+  </button>
+</div>
+`;

@@ -31,7 +31,7 @@ const SearchPanel = styled(Grid)`
   padding: 0 10%;
 `;
 
-const HeaderColored = styled(Grid)`
+export const HeaderColored = styled(Grid)`
   width: 100%;
   background-color: ${colors.darkViolet};
   padding: 20px 15% 100px;

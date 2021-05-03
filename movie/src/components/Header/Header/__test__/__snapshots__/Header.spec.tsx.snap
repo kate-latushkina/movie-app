@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header component should render Header snapshot 1`] = `
+.c4 {
+  width: 100%;
+  height: 40px;
+}
+
+.c5 {
+  width: 70%;
+  height: 100%;
+  border-radius: 2px;
+  border: none;
+}
+
+.c1 {
+  color: #f65261;
+}
+
+.c3 {
+  text-transform: uppercase;
+  font-weight: 100;
+  color: #fff;
+}
+
+.c2 {
+  padding: 0 10%;
+}
+
+.c0 {
+  width: 100%;
+  background-color: #593158;
+  padding: 20px 15% 100px;
+  box-sizing: border-box;
+  border-bottom: 10px solid #555555;
+}
+
+<div
+  className="MuiGrid-root c0"
+>
+  <div
+    className="MuiBox-root MuiBox-root-1"
+  >
+    <div
+      className="MuiGrid-root c1"
+    >
+      <b>
+        netflix
+      </b>
+      <span>
+        roulette
+      </span>
+    </div>
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
+      disabled={false}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        + Add movie
+      </span>
+    </button>
+  </div>
+  <div
+    className="MuiGrid-root c2"
+  >
+    <h2
+      className="c3"
+    >
+      Find your movie
+    </h2>
+    <div
+      className="MuiGrid-root c4 MuiGrid-container MuiGrid-justify-xs-space-between"
+    >
+      <input
+        className="c5 search-panel_input"
+        placeholder="What do you want to watch?"
+      />
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiButton-contained search-panel_button MuiButton-containedSecondary"
+        disabled={false}
+        onBlur={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <span
+          className="MuiButton-label"
+        >
+          Search
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;
