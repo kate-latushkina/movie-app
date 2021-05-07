@@ -2,6 +2,7 @@
 
 exports[`<Poster /> should mount 1`] = `
 <Poster
+  id={1}
   poster_path="/9kg73Mg8WJKlB9Y2SAJzeDKAnuB.jpg"
   release_date="2021"
   title="Poster"
@@ -127,11 +128,17 @@ exports[`<Poster /> should mount 1`] = `
       <div
         className="MuiGrid-root makeStyles-posterItem-1 MuiGrid-item MuiGrid-grid-xs-4"
       >
-        <img
-          alt="Poster"
-          className="makeStyles-posterImg-2"
-          src="https://image.tmdb.org/t/p/original/9kg73Mg8WJKlB9Y2SAJzeDKAnuB.jpg"
-        />
+        <div
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <img
+            alt="Poster"
+            className="makeStyles-posterImg-2"
+            data-id={1}
+            src="https://image.tmdb.org/t/p/original/9kg73Mg8WJKlB9Y2SAJzeDKAnuB.jpg"
+          />
+        </div>
         <Styled(WithStyles(ForwardRef(Grid)))>
           <WithStyles(ForwardRef(Grid))
             className="sc-bdfBwQ fjdAly"

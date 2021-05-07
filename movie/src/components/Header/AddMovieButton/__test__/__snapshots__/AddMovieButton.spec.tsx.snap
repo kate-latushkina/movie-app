@@ -5,6 +5,7 @@ exports[`should render AddMovieButton component should render AddMovieButton sna
   className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
   disabled={false}
   onBlur={[Function]}
+  onClick={[Function]}
   onDragLeave={[Function]}
   onFocus={[Function]}
   onKeyDown={[Function]}

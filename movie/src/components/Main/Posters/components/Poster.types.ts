@@ -1,5 +1,5 @@
 export type ImovieItem = {
-  id?: number;
+  id: number;
   overview?: string;
   poster_path: string;
   title: string;

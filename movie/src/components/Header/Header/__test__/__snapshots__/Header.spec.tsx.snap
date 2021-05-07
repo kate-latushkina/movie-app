@@ -55,6 +55,7 @@ exports[`should render Header component should render Header snapshot 1`] = `
       className="MuiButtonBase-root MuiButton-root MuiButton-outlined MuiButton-outlinedSecondary"
       disabled={false}
       onBlur={[Function]}
+      onClick={[Function]}
       onDragLeave={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}

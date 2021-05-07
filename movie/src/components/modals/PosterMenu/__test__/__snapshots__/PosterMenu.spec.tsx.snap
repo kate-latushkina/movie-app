@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PosterMenu /> should mount 1`] = `
+<PosterMenu
+  id={1}
+>
+  <button
+    className="makeStyles-dotsMenu-1"
+    onClick={[Function]}
+    type="button"
+  >
+    <img
+      alt="dots"
+      className="makeStyles-dotsImageBlock-2"
+      src="ellipsis-v-solid.svg"
+    />
+  </button>
+</PosterMenu>
+`;

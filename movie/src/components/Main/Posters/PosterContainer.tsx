@@ -27,6 +27,7 @@ const Posters: React.FC = () => {
               title={title}
               vote_average={vote_average}
               poster_path={poster_path}
+              id={id}
             />
           ),
         )
