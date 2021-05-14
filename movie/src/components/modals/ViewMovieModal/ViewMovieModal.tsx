@@ -1,23 +1,27 @@
 import { Modal, TextField, Select, MenuItem } from "@material-ui/core";
 import React from "react";
+import { ImovieItem } from "../../Main/Posters/components/Poster.types";
 import useStyles from "./styles";
 
-interface IAddMovieModalProps {
+interface IViewMovieModalProps {
   onClose: () => void;
+  movie: ImovieItem | boolean;
 }
 
-const AddMovieModal: React.FC<IAddMovieModalProps> = (
-  props: IAddMovieModalProps,
+const ViewMovieModal: React.FC<IViewMovieModalProps> = (
+  props: IViewMovieModalProps,
 ) => {
-  const { onClose } = props;
+  const { onClose, movie } = props;
   const classes = useStyles();
   const genre = ["Select Genre", "Select Genre"];
 
   return (
-    <Modal open className={classes.modalBody}>
+    <Modal open className={classes.modalBody} onClose={onClose}>
       <>
         <div className={classes.modalTitleBlock}>
-          <h2 className={classes.modalTitle}>Add movie</h2>
+          <h2 className={classes.modalTitle}>
+            {movie ? "Edit movie" : "Add movie"}
+          </h2>
           <button
             type="button"
             onClick={onClose}
@@ -129,4 +133,4 @@ const AddMovieModal: React.FC<IAddMovieModalProps> = (
   );
 };
 
-export default AddMovieModal;
+export default ViewMovieModal;

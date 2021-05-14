@@ -1,14 +1,14 @@
 import React from "react";
 import toJSON from "enzyme-to-json";
 import { mount, ReactWrapper } from "enzyme";
-import AddMovieModal from "../AddMovieModal";
+import ViewMovieModal from "../ViewMovieModal";
 
 const onClose = () => null;
 
-describe("<AddMovieModal />", () => {
+describe("<ViewMovieModal />", () => {
   let wrapper: ReactWrapper;
   beforeEach(() => {
-    wrapper = mount(<AddMovieModal onClose={onClose} />);
+    wrapper = mount(<ViewMovieModal onClose={onClose} />);
   });
   it("should mount", () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
