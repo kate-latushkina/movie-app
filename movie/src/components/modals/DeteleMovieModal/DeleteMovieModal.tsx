@@ -1,6 +1,7 @@
 import { createStyles, makeStyles, Modal } from "@material-ui/core";
 import React, { useContext } from "react";
 import DeleteModalContext from "../../../context/DeleteModalContext";
+import { deleteMovie } from "../../../variables/Api";
 import colors from "../../../variables/colors";
 
 const useStyles = makeStyles(() =>
@@ -53,6 +54,12 @@ const DeleteMovieModal: React.FC = () => {
   const classes = useStyles();
   const { context, toggleShowHeading } = useContext(DeleteModalContext);
 
+  const handleDelete = () => {
+    console.log("delete");
+    deleteMovie.then();
+    toggleShowHeading();
+  };
+
   return (
     <>
       {context ? (
@@ -72,7 +79,11 @@ const DeleteMovieModal: React.FC = () => {
             <div className={classes.modalText}>
               Are you sure you want to delete this movie?
             </div>
-            <button type="button" className={classes.buttonSubmit}>
+            <button
+              type="button"
+              className={classes.buttonSubmit}
+              onClick={handleDelete}
+            >
               Confirm
             </button>
           </>

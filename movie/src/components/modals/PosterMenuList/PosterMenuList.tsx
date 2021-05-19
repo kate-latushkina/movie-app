@@ -1,5 +1,7 @@
 import { createStyles, makeStyles } from "@material-ui/core";
-import React, { useCallback } from "react";
+import React, { useContext } from "react";
+import DeleteModalContext from "../../../context/DeleteModalContext";
+import ViewModalContext from "../../../context/ViewMovieModalContext";
 import colors from "../../../variables/colors";
 
 const useStyles = makeStyles(() =>
@@ -48,11 +50,9 @@ const PosterMenuList: React.FC<IPosterMenuListProps> = (
   props: IPosterMenuListProps,
 ) => {
   const { id, onClose } = props;
+  const { toggleShowHeading } = useContext(DeleteModalContext);
+  const { toggleShowMovieModal } = useContext(ViewModalContext);
   const classes = useStyles();
-
-  const handleClick = useCallback(() => {
-    console.log(1);
-  }, []);
 
   console.log("PosterMenu", id);
 
@@ -62,12 +62,16 @@ const PosterMenuList: React.FC<IPosterMenuListProps> = (
         <button type="button" className={classes.closeButton} onClick={onClose}>
           X
         </button>
-        <button type="button" className={classes.dotsButtons}>
+        <button
+          type="button"
+          className={classes.dotsButtons}
+          onClick={toggleShowMovieModal}
+        >
           Edit
         </button>
         <button
           type="button"
-          onClick={handleClick}
+          onClick={toggleShowHeading}
           className={`${classes.dotButtonDelete} ${classes.dotsButtons}`}
         >
           Delete

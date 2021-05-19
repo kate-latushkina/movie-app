@@ -1,20 +1,23 @@
-import React, { useCallback, useState } from "react";
+import React, { useContext } from "react";
 import { Button } from "@material-ui/core";
-import AddMovieModal from "../../modals/AddMovieModal";
+import ViewMovieModal from "../../modals/ViewMovieModal";
+import ViewModalContext from "../../../context/ViewMovieModalContext";
 
 const AddMovieButton: React.FC = () => {
-  const [isAddMovieModalShow, setAddMovieModalShow] = useState(false);
-
-  const handleClick = useCallback(() => {
-    setAddMovieModalShow(!isAddMovieModalShow);
-  }, [isAddMovieModalShow]);
+  const { viewMovieContext, toggleShowMovieModal } = useContext(
+    ViewModalContext,
+  );
 
   return (
     <>
-      <Button variant="outlined" color="secondary" onClick={handleClick}>
+      <Button
+        variant="outlined"
+        color="secondary"
+        onClick={toggleShowMovieModal}
+      >
         + Add movie
       </Button>
-      {isAddMovieModalShow ? <AddMovieModal onClose={handleClick} /> : null}
+      {viewMovieContext ? <ViewMovieModal /> : null}
     </>
   );
 };
