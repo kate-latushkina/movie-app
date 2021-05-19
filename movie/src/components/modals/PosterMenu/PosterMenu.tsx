@@ -25,9 +25,9 @@ const useStyles = makeStyles(() =>
   }),
 );
 
-type IPosterMenuProps = {
+interface IPosterMenuProps {
   id: number;
-};
+}
 
 const PosterMenu: React.FC<IPosterMenuProps> = ({ id }: IPosterMenuProps) => {
   const classes = useStyles();
