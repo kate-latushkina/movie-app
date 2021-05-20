@@ -57,27 +57,25 @@ const PosterMenuList: React.FC<IPosterMenuListProps> = (
   console.log("PosterMenu", id);
 
   return (
-    <>
-      <div className={classes.dotsButtonsBlock}>
-        <button type="button" className={classes.closeButton} onClick={onClose}>
-          X
-        </button>
-        <button
-          type="button"
-          className={classes.dotsButtons}
-          onClick={toggleShowMovieModal}
-        >
-          Edit
-        </button>
-        <button
-          type="button"
-          onClick={toggleShowHeading}
-          className={`${classes.dotButtonDelete} ${classes.dotsButtons}`}
-        >
-          Delete
-        </button>
-      </div>
-    </>
+    <div className={classes.dotsButtonsBlock}>
+      <button type="button" className={classes.closeButton} onClick={onClose}>
+        X
+      </button>
+      <button
+        type="button"
+        className={classes.dotsButtons}
+        onClick={toggleShowMovieModal}
+      >
+        Edit
+      </button>
+      <button
+        type="button"
+        onClick={toggleShowHeading}
+        className={`${classes.dotButtonDelete} ${classes.dotsButtons}`}
+      >
+        Delete
+      </button>
+    </div>
   );
 };
 
