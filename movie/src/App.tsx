@@ -21,7 +21,10 @@ export const App: React.FC = () => {
   return (
     <>
       <ViewModalContext.Provider
-        value={{ viewMovieContext, toggleShowMovieModal }}
+        value={{
+          viewMovieContext,
+          toggleShowMovieModal,
+        }}
       >
         <DeleteModalContext.Provider value={{ context, toggleShowHeading }}>
           <DeleteMovieModal />

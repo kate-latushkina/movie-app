@@ -6,7 +6,6 @@ const useStyles = makeStyles(() =>
     modalBody: {
       width: "70%",
       maxWidth: "1000px",
-      maxHeight: "550px",
       padding: "40px 40px",
       border: `1px solid ${colors.darkGrey}`,
       backgroundColor: colors.darkGrey,
@@ -29,9 +28,9 @@ const useStyles = makeStyles(() =>
       cursor: "pointer",
       color: colors.white,
     },
-    form: {
-      display: "flex",
-      flexWrap: "wrap",
+    inputLabel: {
+      color: colors.white,
+      margin: "15px",
     },
     textField: {
       width: "100%",
@@ -40,6 +39,15 @@ const useStyles = makeStyles(() =>
     textFieldColor: {
       color: colors.white,
       borderColor: `${colors.white} !important`,
+    },
+    textFieldError: {
+      borderColor: `${colors.pink} !important`,
+    },
+    selectColor: {
+      border: `1px solid ${colors.white}`,
+      "&:hover": {
+        borderColor: colors.white,
+      },
     },
     buttonsBlock: {
       marginTop: "30px",
@@ -60,6 +68,10 @@ const useStyles = makeStyles(() =>
       border: `1px solid ${colors.pink}`,
       borderRadius: "5px",
       cursor: "pointer",
+    },
+    feedback: {
+      color: colors.pink,
+      fontSize: "18px",
     },
   }),
 );
