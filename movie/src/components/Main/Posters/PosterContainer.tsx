@@ -20,6 +20,8 @@ const Posters: React.FC = () => {
             vote_average,
             poster_path,
             release_date,
+            overview,
+            genre_ids,
           }: ImovieItem) => (
             <Poster
               key={id}
@@ -28,6 +30,8 @@ const Posters: React.FC = () => {
               vote_average={vote_average}
               poster_path={poster_path}
               id={id}
+              overview={overview}
+              genre_ids={genre_ids}
             />
           ),
         )
