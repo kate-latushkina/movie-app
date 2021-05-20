@@ -10,6 +10,7 @@ describe("<Poster />", () => {
     wrapper = mount(
       <Poster
         key={CARD_PROP_MOC.id}
+        id={CARD_PROP_MOC.id}
         release_date={CARD_PROP_MOC.release_date}
         title={CARD_PROP_MOC.title}
         vote_average={CARD_PROP_MOC.vote_average}
