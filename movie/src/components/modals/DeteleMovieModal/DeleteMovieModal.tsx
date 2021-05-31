@@ -1,6 +1,8 @@
 import { createStyles, makeStyles, Modal } from "@material-ui/core";
 import React, { useContext } from "react";
+import { useSelector } from "react-redux";
 import DeleteModalContext from "../../../context/DeleteModalContext";
+import { AppState } from "../../../state/reducers/rootRedicer";
 import { deleteMovie } from "../../../variables/Api";
 import colors from "../../../variables/colors";
 
@@ -53,9 +55,10 @@ const useStyles = makeStyles(() =>
 const DeleteMovieModal: React.FC = () => {
   const classes = useStyles();
   const { context, toggleShowHeading } = useContext(DeleteModalContext);
+  const { id } = useSelector((state: AppState) => state.id);
 
   const handleDelete = () => {
-    console.log("delete");
+    console.log(`movie with id ${id} was deleted`);
     deleteMovie.then();
     toggleShowHeading();
   };

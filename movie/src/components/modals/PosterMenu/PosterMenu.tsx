@@ -1,7 +1,11 @@
 import { createStyles, makeStyles } from "@material-ui/core";
-import React, { useCallback, useState } from "react";
+import React, { Dispatch, useCallback, useState } from "react";
+import { useDispatch } from "react-redux";
 import dotsImage from "../../../img/ellipsis-v-solid.svg";
+import { MovieActions } from "../../../state/actions/movieAction";
+import addInputToState from "../../../utils/addInputToState";
 import colors from "../../../variables/colors";
+import { ImovieItem } from "../../Main/Posters/components/Poster.types";
 import PosterMenuList from "../PosterMenuList";
 
 const useStyles = makeStyles(() =>
@@ -25,16 +29,34 @@ const useStyles = makeStyles(() =>
   }),
 );
 
-interface IPosterMenuProps {
-  id: number;
-}
-
-const PosterMenu: React.FC<IPosterMenuProps> = ({ id }: IPosterMenuProps) => {
+const PosterMenu: React.FC<ImovieItem> = ({
+  title,
+  poster_path,
+  release_date,
+  id,
+  genre_ids,
+  overview,
+}: ImovieItem) => {
   const classes = useStyles();
   const [isPosterMenuListShow, setPosterMenuListShow] = useState(false);
+  const movieDispatch = useDispatch<Dispatch<MovieActions>>();
 
   const handleClick = useCallback(() => {
     setPosterMenuListShow(true);
+    const correctMovie = addInputToState({
+      title,
+      movieUrl: poster_path,
+      release_date,
+      id,
+      genre: "Horror",
+      overview,
+    });
+    movieDispatch({
+      type: "SET_MOVIE",
+      payload: {
+        ...correctMovie,
+      },
+    });
   }, [isPosterMenuListShow]);
 
   const onClose = useCallback(() => {
@@ -46,9 +68,7 @@ const PosterMenu: React.FC<IPosterMenuProps> = ({ id }: IPosterMenuProps) => {
       <button type="button" onClick={handleClick} className={classes.dotsMenu}>
         <img src={dotsImage} alt="dots" className={classes.dotsImageBlock} />
       </button>
-      {isPosterMenuListShow ? (
-        <PosterMenuList id={id} onClose={onClose} />
-      ) : null}
+      {isPosterMenuListShow ? <PosterMenuList onClose={onClose} /> : null}
     </>
   );
 };

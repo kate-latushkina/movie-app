@@ -37,7 +37,7 @@ const useStyles = makeStyles(() =>
       marginTop: "20px",
     },
     textFieldColor: {
-      color: colors.white,
+      color: `${colors.white} !important`,
       borderColor: `${colors.white} !important`,
     },
     textFieldError: {

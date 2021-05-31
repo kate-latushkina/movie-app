@@ -1,5 +1,5 @@
 const defaultValueForm = {
-  id: 0,
+  id: "0",
   title: "",
   release_date: "2021-01-01",
   movieUrl: "",

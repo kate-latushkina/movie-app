@@ -74,7 +74,16 @@ const Poster: React.ComponentType<ImovieItem> = ({
           className={classes.posterImg}
           data-id={id}
         />
-        {isPosterMenuShow ? <PosterMenu id={id} /> : null}
+        {isPosterMenuShow ? (
+          <PosterMenu
+            title={title}
+            poster_path={poster_path}
+            release_date={release_date}
+            id={id}
+            genre_ids={genre_ids}
+            overview={overview}
+          />
+        ) : null}
       </div>
       <MovieInfo>
         <span className={classes.title}>{title}</span>
