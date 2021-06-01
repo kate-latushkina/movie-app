@@ -37,7 +37,7 @@ const ModalForm: React.FC = () => {
           : defaultValueForm
       }
       validationSchema={validationModal}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={values => {
         console.log(JSON.stringify(values, null, 2));
 
         const correct = addInputToState({ ...values });
@@ -49,7 +49,6 @@ const ModalForm: React.FC = () => {
           },
         });
         toggleShowMovieModal();
-        setSubmitting(false);
       }}
     >
       {({
