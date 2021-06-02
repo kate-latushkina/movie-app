@@ -12,7 +12,6 @@ const Main: React.FC = () => {
         <Categories />
         <Sorting />
       </CategoryContainer>
-      <div>50 movie found</div>
       <PostersCategory>
         <Posters />
       </PostersCategory>

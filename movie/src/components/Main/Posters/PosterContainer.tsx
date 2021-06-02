@@ -1,4 +1,6 @@
+import { Grid } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import { addMovies } from "../../../variables/Api";
 import Poster from "./components";
 import { ImovieItem, Tmovies } from "./components/Poster.types";
@@ -12,6 +14,7 @@ const Posters: React.FC = () => {
 
   return (
     <>
+      <PostersLength>{movies.length} movies found</PostersLength>
       {movies ? (
         movies.map(
           ({
@@ -41,5 +44,10 @@ const Posters: React.FC = () => {
     </>
   );
 };
+
+export const PostersLength = styled(Grid)`
+  width: 100%;
+  margin: 10px 0 20px;
+`;
 
 export default Posters;
