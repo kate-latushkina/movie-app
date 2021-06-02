@@ -5,6 +5,7 @@ import ViewMovieModal from "../../modals/ViewMovieModal";
 import ViewModalContext from "../../../context/ViewMovieModalContext";
 import defaultValueForm from "../../../variables/defaultMovie";
 import { MovieActions } from "../../../state/actions/movieAction";
+import { setMovie } from "../../../state/reducers/actionCreators";
 
 const AddMovieButton: React.FC = () => {
   const { viewMovieContext, toggleShowMovieModal } = useContext(
@@ -14,12 +15,7 @@ const AddMovieButton: React.FC = () => {
 
   const handleClickAddMovieModal = () => {
     toggleShowMovieModal();
-    movieDispatch({
-      type: "SET_MOVIE",
-      payload: {
-        ...defaultValueForm,
-      },
-    });
+    movieDispatch(setMovie(defaultValueForm));
   };
 
   return (

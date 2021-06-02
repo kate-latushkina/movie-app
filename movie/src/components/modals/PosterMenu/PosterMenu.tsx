@@ -3,6 +3,7 @@ import React, { Dispatch, useCallback, useState } from "react";
 import { useDispatch } from "react-redux";
 import dotsImage from "../../../img/ellipsis-v-solid.svg";
 import { MovieActions } from "../../../state/actions/movieAction";
+import { setMovie } from "../../../state/reducers/actionCreators";
 import addInputToState from "../../../utils/addInputToState";
 import colors from "../../../variables/colors";
 import { ImovieItem } from "../../Main/Posters/components/Poster.types";
@@ -51,12 +52,7 @@ const PosterMenu: React.FC<ImovieItem> = ({
       genre: "Horror",
       overview,
     });
-    movieDispatch({
-      type: "SET_MOVIE",
-      payload: {
-        ...correctMovie,
-      },
-    });
+    movieDispatch(setMovie(correctMovie));
   }, [isPosterMenuListShow]);
 
   const onClose = useCallback(() => {

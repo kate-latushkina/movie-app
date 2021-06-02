@@ -15,6 +15,7 @@ import defaultValueForm from "../../../../variables/defaultMovie";
 import { AppState } from "../../../../state/reducers/rootRedicer";
 import { MovieActions } from "../../../../state/actions/movieAction";
 import addInputToState from "../../../../utils/addInputToState";
+import { setMovie } from "../../../../state/reducers/actionCreators";
 
 const ModalForm: React.FC = () => {
   const classes = useStyles();
@@ -41,13 +42,8 @@ const ModalForm: React.FC = () => {
         console.log(JSON.stringify(values, null, 2));
 
         const correct = addInputToState({ ...values });
+        movieDispatch(setMovie(correct));
 
-        movieDispatch({
-          type: "SET_MOVIE",
-          payload: {
-            ...correct,
-          },
-        });
         toggleShowMovieModal();
       }}
     >

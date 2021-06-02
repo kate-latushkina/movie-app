@@ -1,5 +1,5 @@
 export interface ISetMovieAction {
-  readonly type: "SET_MOVIE";
+  readonly type: string;
   payload: {
     id?: string | number;
     title?: string;
