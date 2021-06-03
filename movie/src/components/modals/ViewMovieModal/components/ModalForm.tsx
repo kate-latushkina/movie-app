@@ -15,26 +15,17 @@ import defaultValueForm from "../../../../variables/defaultMovie";
 import { MovieActions } from "../../../../state/actions/movieAction";
 import addInputToState from "../../../../utils/addInputToState";
 import { setMovie } from "../../../../state/reducers/actionCreators";
-import {
-  selectGenre,
-  selectId,
-  selectMovieUrl,
-  selectOverview,
-  selectTitle,
-  selectReleaseDate,
-} from "../../../../state/reducers/selectors";
+import { selectMovie } from "../../../../state/reducers/selectors";
 
 const ModalForm: React.FC = () => {
   const classes = useStyles();
   const genreDefault = ["Comedy", "Horror", "Documentary", "Thriller"];
   const { toggleShowMovieModal } = useContext(ViewModalContext);
 
-  const { id } = useSelector(selectId);
-  const { overview } = useSelector(selectOverview);
-  const { title } = useSelector(selectTitle);
-  const { release_date } = useSelector(selectReleaseDate);
-  const { movieUrl } = useSelector(selectMovieUrl);
-  const { genre } = useSelector(selectGenre);
+  const { id, overview, title, release_date, movieUrl, genre } = useSelector(
+    selectMovie,
+  );
+
   const movieDispatch = useDispatch<Dispatch<MovieActions>>();
 
   return (

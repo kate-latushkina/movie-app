@@ -1,25 +1,15 @@
 import { createSelector } from "reselect";
 import { AppState } from "./rootRedicer";
 
-const selectMovie = (state: AppState) => state;
-export const selectId = createSelector(selectMovie, movieData => movieData.id);
-export const selectTitle = createSelector(
-  selectMovie,
-  movieData => movieData.title,
+const selectMovieSelector = (state: AppState) => state.movie;
+const selectMovies = (state: AppState[]) => state;
+
+export const selectMovie = createSelector(
+  selectMovieSelector,
+  movieData => movieData,
 );
-export const selectOverview = createSelector(
-  selectMovie,
-  movieData => movieData.overview,
-);
-export const selectMovieUrl = createSelector(
-  selectMovie,
-  movieData => movieData.movieUrl,
-);
-export const selectReleaseDate = createSelector(
-  selectMovie,
-  movieData => movieData.release_date,
-);
-export const selectGenre = createSelector(
-  selectMovie,
-  movieData => movieData.genre,
+
+export const selectAllMovies = createSelector(
+  selectMovies,
+  movieData => movieData,
 );

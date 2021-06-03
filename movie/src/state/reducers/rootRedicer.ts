@@ -1,13 +1,10 @@
 import { combineReducers } from "redux";
-import nameReducer from "./movieReducer";
+import AllMoviesReducer from "./allMoviesReducer";
+import movieReducer from "./movieReducer";
 
 const rootReducer = combineReducers({
-  id: nameReducer,
-  title: nameReducer,
-  overview: nameReducer,
-  movieUrl: nameReducer,
-  release_date: nameReducer,
-  genre: nameReducer,
+  movie: movieReducer,
+  allMovies: AllMoviesReducer,
 });
 
 export type AppState = ReturnType<typeof rootReducer>;

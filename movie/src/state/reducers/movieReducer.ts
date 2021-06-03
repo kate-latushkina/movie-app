@@ -21,7 +21,6 @@ const MovieReducer = (
   switch (action.type) {
     case "SET_MOVIE":
       return {
-        ...state,
         ...action.payload,
       };
     default:
