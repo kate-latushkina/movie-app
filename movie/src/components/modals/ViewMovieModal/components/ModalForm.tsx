@@ -12,22 +12,29 @@ import useStyles from "../styles";
 import validationModal from "../../../../utils/validation";
 import ViewModalContext from "../../../../context/ViewMovieModalContext";
 import defaultValueForm from "../../../../variables/defaultMovie";
-import { AppState } from "../../../../state/reducers/rootRedicer";
 import { MovieActions } from "../../../../state/actions/movieAction";
 import addInputToState from "../../../../utils/addInputToState";
 import { setMovie } from "../../../../state/reducers/actionCreators";
+import {
+  selectGenre,
+  selectId,
+  selectMovieUrl,
+  selectOverview,
+  selectTitle,
+  selectReleaseDate,
+} from "../../../../state/reducers/selectors";
 
 const ModalForm: React.FC = () => {
   const classes = useStyles();
   const genreDefault = ["Comedy", "Horror", "Documentary", "Thriller"];
   const { toggleShowMovieModal } = useContext(ViewModalContext);
 
-  const { id } = useSelector((state: AppState) => state.id);
-  const { overview } = useSelector((state: AppState) => state.overview);
-  const { title } = useSelector((state: AppState) => state.title);
-  const { release_date } = useSelector((state: AppState) => state.release_date);
-  const { movieUrl } = useSelector((state: AppState) => state.movieUrl);
-  const { genre } = useSelector((state: AppState) => state.genre);
+  const { id } = useSelector(selectId);
+  const { overview } = useSelector(selectOverview);
+  const { title } = useSelector(selectTitle);
+  const { release_date } = useSelector(selectReleaseDate);
+  const { movieUrl } = useSelector(selectMovieUrl);
+  const { genre } = useSelector(selectGenre);
   const movieDispatch = useDispatch<Dispatch<MovieActions>>();
 
   return (
