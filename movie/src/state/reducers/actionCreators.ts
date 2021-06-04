@@ -1,3 +1,4 @@
+import { Dispatch } from "redux";
 import { AllMoviesState } from "./allMoviesReducer";
 import { MovieState } from "./movieReducer";
 import moviesData from "./addMovies";
@@ -12,13 +13,14 @@ export function setMovie(movie: MovieState) {
   };
 }
 
-export function setAllMovies(movies: AllMoviesState) {
+export function setAllMovies(movies: AllMoviesState[]) {
   return {
     type: SET_ALL_MOVIES,
     payload: movies,
   };
 }
 
-export const getAllMovies = () => async (dispatch: any) => {
-  dispatch(setAllMovies(await moviesData.addAllMovies()));
+export const getAllMovies = () => async (dispatch: Dispatch) => {
+  const result = await moviesData.addAllMovies();
+  dispatch(setAllMovies(result));
 };

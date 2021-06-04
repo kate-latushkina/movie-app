@@ -35,7 +35,6 @@ const PosterMenu: React.FC<ImovieItem> = ({
   poster_path,
   release_date,
   id,
-  genre_ids,
   overview,
 }: ImovieItem) => {
   const classes = useStyles();

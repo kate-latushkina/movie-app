@@ -91,16 +91,20 @@ const Poster: React.ComponentType<ImovieItem> = ({
       </MovieInfo>
       <span>{vote_average}</span>
       <ul className={classes.genreBlock}>
-        {genre_ids.map((genre: number, index: number) => {
-          const ind = index;
-          return GENRE.filter(value => value.id === genre).map(genreName => {
-            return (
-              <li className={classes.genre} key={id + ind}>
-                {genreName.name}
-              </li>
-            );
-          });
-        })}
+        {genre_ids
+          ? genre_ids.map((genre: number, index: number) => {
+              const ind = index;
+              return GENRE.filter(value => value.id === genre).map(
+                genreName => {
+                  return (
+                    <li className={classes.genre} key={id + ind}>
+                      {genreName.name}
+                    </li>
+                  );
+                },
+              );
+            })
+          : null}
       </ul>
     </Grid>
   );

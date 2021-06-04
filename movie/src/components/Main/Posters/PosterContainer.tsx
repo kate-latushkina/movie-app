@@ -1,31 +1,26 @@
 import { Grid } from "@material-ui/core";
-import React, { Dispatch, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { AllMoviesActions } from "../../../state/actions/allMoviesAction";
-import { setAllMovies } from "../../../state/reducers/actionCreators";
+import { getAllMovies } from "../../../state/reducers/actionCreators";
 import { AllMoviesState } from "../../../state/reducers/allMoviesReducer";
 import { selectAllMovies } from "../../../state/reducers/selectors";
-import { addMovies } from "../../../variables/Api";
 import Poster from "./components";
 
 const Posters: React.FC = () => {
-  const [movies, setMovies] = useState<any>([]);
-  const allMovieDispatch = useDispatch<Dispatch<AllMoviesActions>>();
+  const movies: AllMoviesState[] = useSelector(selectAllMovies);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    addMovies.then(res => {
-      const moviesRequest = allMovieDispatch(setAllMovies(res));
-      return setMovies(moviesRequest);
-    });
+    dispatch(getAllMovies());
   }, []);
-  console.log(movies);
+
   return (
     <>
-      <PostersLength>20 movies found</PostersLength>
+      <PostersLength>{movies.length} movies found</PostersLength>
 
-      {movies.payload ? (
-        movies.payload.map(
+      {movies ? (
+        movies.map(
           ({
             id,
             title,

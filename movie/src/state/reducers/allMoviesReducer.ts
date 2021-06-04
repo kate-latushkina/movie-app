@@ -1,14 +1,5 @@
+import defaultAllMoviesArray from "../../variables/defaultAllMoviesArray";
 import { AllMoviesActions } from "../actions/allMoviesAction";
-
-const defaultMovie = {
-  id: 0,
-  title: "",
-  overview: "",
-  poster_path: "",
-  release_date: "2021-01-01",
-  genre_ids: [1],
-  vote_average: 5,
-};
 
 export interface IObjectKeys {
   [key: string]: string | number | number[];
@@ -25,14 +16,12 @@ export interface AllMoviesState extends IObjectKeys {
 }
 
 const AllMoviesReducer = (
-  state: AllMoviesState = defaultMovie,
+  state: AllMoviesState[] = defaultAllMoviesArray,
   action: AllMoviesActions,
 ) => {
   switch (action.type) {
     case "SET_ALL_MOVIES":
-      return {
-        ...action.payload,
-      };
+      return action.payload;
     default:
       return state;
   }
