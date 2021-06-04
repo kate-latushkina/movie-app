@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import { AllMoviesState } from "./allMoviesReducer";
 import { MovieState } from "./movieReducer";
-import moviesData from "./addMovies";
+import { addMovies } from "../../variables/Api";
 
 const SET_MOVIE = "SET_MOVIE";
 const SET_ALL_MOVIES = "SET_ALL_MOVIES";
@@ -21,6 +21,6 @@ export function setAllMovies(movies: AllMoviesState[]) {
 }
 
 export const getAllMovies = () => async (dispatch: Dispatch) => {
-  const result = await moviesData.addAllMovies();
+  const result = await addMovies.then(res => res);
   dispatch(setAllMovies(result));
 };
