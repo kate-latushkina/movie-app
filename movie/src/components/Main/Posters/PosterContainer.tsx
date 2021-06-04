@@ -1,17 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { addMovies } from "../../../variables/Api";
+import { Grid } from "@material-ui/core";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import styled from "styled-components";
+import { getAllMovies } from "../../../state/reducers/actionCreators";
+import { AllMoviesState } from "../../../state/reducers/allMoviesReducer";
+import { selectAllMovies } from "../../../state/reducers/selectors";
 import Poster from "./components";
-import { ImovieItem, Tmovies } from "./components/Poster.types";
 
 const Posters: React.FC = () => {
-  const [movies, setMovies] = useState<Tmovies>([]);
+  const movies: AllMoviesState[] = useSelector(selectAllMovies);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    addMovies.then(res => setMovies(res));
+    dispatch(getAllMovies());
   }, []);
 
   return (
     <>
+      <PostersLength>{movies.length} movies found</PostersLength>
+
       {movies ? (
         movies.map(
           ({
@@ -22,7 +29,7 @@ const Posters: React.FC = () => {
             release_date,
             overview,
             genre_ids,
-          }: ImovieItem) => (
+          }: AllMoviesState) => (
             <Poster
               key={id}
               release_date={release_date}
@@ -41,5 +48,10 @@ const Posters: React.FC = () => {
     </>
   );
 };
+
+export const PostersLength = styled(Grid)`
+  width: 100%;
+  margin: 10px 0 20px;
+`;
 
 export default Posters;

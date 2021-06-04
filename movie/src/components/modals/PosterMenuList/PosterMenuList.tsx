@@ -42,19 +42,16 @@ const useStyles = makeStyles(() =>
 );
 
 export type IPosterMenuListProps = {
-  id: number;
   onClose: () => void;
 };
 
 const PosterMenuList: React.FC<IPosterMenuListProps> = (
   props: IPosterMenuListProps,
 ) => {
-  const { id, onClose } = props;
+  const { onClose } = props;
   const { toggleShowHeading } = useContext(DeleteModalContext);
   const { toggleShowMovieModal } = useContext(ViewModalContext);
   const classes = useStyles();
-
-  console.log("PosterMenu", id);
 
   return (
     <div className={classes.dotsButtonsBlock}>

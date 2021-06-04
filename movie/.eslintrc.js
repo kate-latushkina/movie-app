@@ -59,5 +59,6 @@ module.exports = {
     ],
     "react-hooks/exhaustive-deps": "off",
     "import/no-extraneous-dependencies": ["warn"],
+    "no-param-reassign": [2, { "props": false }]
   },
 };

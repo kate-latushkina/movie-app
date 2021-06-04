@@ -74,7 +74,16 @@ const Poster: React.ComponentType<ImovieItem> = ({
           className={classes.posterImg}
           data-id={id}
         />
-        {isPosterMenuShow ? <PosterMenu id={id} /> : null}
+        {isPosterMenuShow ? (
+          <PosterMenu
+            title={title}
+            poster_path={poster_path}
+            release_date={release_date}
+            id={id}
+            genre_ids={genre_ids}
+            overview={overview}
+          />
+        ) : null}
       </div>
       <MovieInfo>
         <span className={classes.title}>{title}</span>
@@ -82,16 +91,20 @@ const Poster: React.ComponentType<ImovieItem> = ({
       </MovieInfo>
       <span>{vote_average}</span>
       <ul className={classes.genreBlock}>
-        {genre_ids.map((genre: number, index: number) => {
-          const ind = index;
-          return GENRE.filter(value => value.id === genre).map(genreName => {
-            return (
-              <li className={classes.genre} key={id + ind}>
-                {genreName.name}
-              </li>
-            );
-          });
-        })}
+        {genre_ids
+          ? genre_ids.map((genre: number, index: number) => {
+              const ind = index;
+              return GENRE.filter(value => value.id === genre).map(
+                genreName => {
+                  return (
+                    <li className={classes.genre} key={id + ind}>
+                      {genreName.name}
+                    </li>
+                  );
+                },
+              );
+            })
+          : null}
       </ul>
     </Grid>
   );
