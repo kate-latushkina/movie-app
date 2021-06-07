@@ -5,6 +5,7 @@ import { addMovies } from "../../variables/Api";
 
 const SET_MOVIE = "SET_MOVIE";
 const SET_ALL_MOVIES = "SET_ALL_MOVIES";
+const SHOW_MOVIE_DETAILS = "SHOW_MOVIE_DETAILS";
 
 export function setMovie(movie: MovieState) {
   return {
@@ -17,6 +18,13 @@ export function setAllMovies(movies: AllMoviesState[]) {
   return {
     type: SET_ALL_MOVIES,
     payload: movies,
+  };
+}
+
+export function setIsShowMovieDetails(isShowNew: boolean) {
+  return {
+    type: SHOW_MOVIE_DETAILS,
+    isShowMovieDetails: isShowNew,
   };
 }
 

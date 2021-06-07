@@ -9,6 +9,7 @@ const SearchMovie: React.FC = () => {
       <Input
         className="search-panel_input"
         placeholder="What do you want to watch?"
+        autoFocus
       />
       <Button
         variant="contained"

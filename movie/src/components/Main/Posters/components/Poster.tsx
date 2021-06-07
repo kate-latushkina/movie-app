@@ -1,11 +1,19 @@
 import { Grid, makeStyles, createStyles } from "@material-ui/core";
-import React, { useCallback, useState } from "react";
+import React, { Dispatch, useCallback, useState } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
 import { ImovieItem } from "./Poster.types";
 import { API_IMG } from "../../../../variables/Api";
 import colors from "../../../../variables/colors";
 import PosterMenu from "../../../modals/PosterMenu";
 import GENRE from "../../../../variables/genre";
+import addInputToState from "../../../../utils/addInputToState";
+import {
+  setIsShowMovieDetails,
+  setMovie,
+} from "../../../../state/reducers/actionCreators";
+import { MovieActions } from "../../../../state/actions/movieAction";
+import { isShowMovieDetailsActions } from "../../../../state/actions/isShowMovieDetailsAction";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -16,6 +24,7 @@ const useStyles = makeStyles(() =>
     },
     posterImg: {
       width: "100%",
+      cursor: "pointer",
     },
     releaseDate: {
       border: `1px solid ${colors.darkGrey}`,
@@ -56,6 +65,10 @@ const Poster: React.ComponentType<ImovieItem> = ({
 }: ImovieItem) => {
   const classes = useStyles();
   const [isPosterMenuShow, setPosterMenuShow] = useState(false);
+  const movieDispatch = useDispatch<Dispatch<MovieActions>>();
+  const isShowMovieDispatch = useDispatch<
+    Dispatch<isShowMovieDetailsActions>
+  >();
 
   const mouseLeave = useCallback(() => {
     setPosterMenuShow(false);
@@ -65,6 +78,25 @@ const Poster: React.ComponentType<ImovieItem> = ({
     setPosterMenuShow(true);
   }, [isPosterMenuShow]);
 
+  const correctGenre = genre_ids?.map((genre: number) => {
+    return GENRE.filter(value => value.id === genre).map(genreName => {
+      return genreName.name;
+    });
+  });
+
+  const setMovieDetails = () => {
+    const correctMovie = addInputToState({
+      title,
+      movieUrl: poster_path,
+      release_date,
+      id,
+      genre: String(correctGenre),
+      overview,
+    });
+    movieDispatch(setMovie(correctMovie));
+    isShowMovieDispatch(setIsShowMovieDetails(true));
+  };
+
   return (
     <Grid item xs={4} className={classes.posterItem}>
       <div onMouseLeave={mouseLeave} onMouseEnter={mouseEnter}>
@@ -73,6 +105,8 @@ const Poster: React.ComponentType<ImovieItem> = ({
           alt={title}
           className={classes.posterImg}
           data-id={id}
+          onClick={setMovieDetails}
+          role="presentation"
         />
         {isPosterMenuShow ? (
           <PosterMenu
@@ -92,16 +126,11 @@ const Poster: React.ComponentType<ImovieItem> = ({
       <span>{vote_average}</span>
       <ul className={classes.genreBlock}>
         {genre_ids
-          ? genre_ids.map((genre: number, index: number) => {
-              const ind = index;
-              return GENRE.filter(value => value.id === genre).map(
-                genreName => {
-                  return (
-                    <li className={classes.genre} key={id + ind}>
-                      {genreName.name}
-                    </li>
-                  );
-                },
+          ? correctGenre?.map((genreName: string[]) => {
+              return (
+                <li className={classes.genre} key={genreName + String(id)}>
+                  {genreName}
+                </li>
               );
             })
           : null}
