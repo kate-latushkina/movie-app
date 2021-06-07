@@ -12,6 +12,7 @@ export interface MovieState extends IObjectKeys {
   movieUrl?: string;
   release_date?: string;
   genre?: string;
+  vote_average?: number;
 }
 
 const MovieReducer = (

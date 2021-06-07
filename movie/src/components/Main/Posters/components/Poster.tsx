@@ -92,6 +92,7 @@ const Poster: React.ComponentType<ImovieItem> = ({
       id,
       genre: String(correctGenre),
       overview,
+      vote_average,
     });
     movieDispatch(setMovie(correctMovie));
     isShowMovieDispatch(setIsShowMovieDetails(true));
