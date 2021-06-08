@@ -8,12 +8,8 @@ import colors from "../../../../variables/colors";
 import PosterMenu from "../../../modals/PosterMenu";
 import GENRE from "../../../../variables/genre";
 import addInputToState from "../../../../utils/addInputToState";
-import {
-  setIsShowMovieDetails,
-  setMovie,
-} from "../../../../state/reducers/actionCreators";
+import { setMovie } from "../../../../state/reducers/actionCreators";
 import { MovieActions } from "../../../../state/actions/movieAction";
-import { isShowMovieDetailsActions } from "../../../../state/actions/isShowMovieDetailsAction";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -66,9 +62,6 @@ const Poster: React.ComponentType<ImovieItem> = ({
   const classes = useStyles();
   const [isPosterMenuShow, setPosterMenuShow] = useState(false);
   const movieDispatch = useDispatch<Dispatch<MovieActions>>();
-  const isShowMovieDispatch = useDispatch<
-    Dispatch<isShowMovieDetailsActions>
-  >();
 
   const mouseLeave = useCallback(() => {
     setPosterMenuShow(false);
@@ -95,7 +88,6 @@ const Poster: React.ComponentType<ImovieItem> = ({
       vote_average,
     });
     movieDispatch(setMovie(correctMovie));
-    isShowMovieDispatch(setIsShowMovieDetails(true));
   };
 
   return (

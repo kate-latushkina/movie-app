@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
-import Header from "./components/Header";
 import DeleteModalContext from "./context/DeleteModalContext";
 import DeleteMovieModal from "./components/modals/DeteleMovieModal";
 import ViewModalContext from "./context/ViewMovieModalContext";
+import HomePage from "./pages/Home";
 
 export const App: React.FC = () => {
   const [context, setContext] = useState(false);
@@ -28,9 +26,7 @@ export const App: React.FC = () => {
       >
         <DeleteModalContext.Provider value={{ context, toggleShowHeading }}>
           <DeleteMovieModal />
-          <Header />
-          <Main />
-          <Footer />
+          <HomePage />
         </DeleteModalContext.Provider>
       </ViewModalContext.Provider>
     </>
