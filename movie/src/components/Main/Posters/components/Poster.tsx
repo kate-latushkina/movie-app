@@ -2,6 +2,7 @@ import { Grid, makeStyles, createStyles } from "@material-ui/core";
 import React, { Dispatch, useCallback, useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { ImovieItem } from "./Poster.types";
 import { API_IMG } from "../../../../variables/Api";
 import colors from "../../../../variables/colors";
@@ -93,14 +94,16 @@ const Poster: React.ComponentType<ImovieItem> = ({
   return (
     <Grid item xs={4} className={classes.posterItem}>
       <div onMouseLeave={mouseLeave} onMouseEnter={mouseEnter}>
-        <img
-          src={API_IMG + poster_path}
-          alt={title}
-          className={classes.posterImg}
-          data-id={id}
-          onClick={setMovieDetails}
-          role="presentation"
-        />
+        <NavLink to="/details">
+          <img
+            src={API_IMG + poster_path}
+            alt={title}
+            className={classes.posterImg}
+            data-id={id}
+            onClick={setMovieDetails}
+            role="presentation"
+          />
+        </NavLink>
         {isPosterMenuShow ? (
           <PosterMenu
             title={title}
@@ -109,6 +112,7 @@ const Poster: React.ComponentType<ImovieItem> = ({
             id={id}
             genre_ids={genre_ids}
             overview={overview}
+            vote_average={vote_average}
           />
         ) : null}
       </div>

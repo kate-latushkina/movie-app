@@ -36,6 +36,7 @@ const PosterMenu: React.FC<ImovieItem> = ({
   release_date,
   id,
   overview,
+  vote_average,
 }: ImovieItem) => {
   const classes = useStyles();
   const [isPosterMenuListShow, setPosterMenuListShow] = useState(false);
@@ -50,6 +51,7 @@ const PosterMenu: React.FC<ImovieItem> = ({
       id,
       genre: "Horror",
       overview,
+      vote_average,
     });
     movieDispatch(setMovie(correctMovie));
   }, [isPosterMenuListShow]);

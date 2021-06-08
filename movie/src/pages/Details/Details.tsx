@@ -1,7 +1,8 @@
 import React from "react";
 import { Box, createStyles, Grid, makeStyles } from "@material-ui/core";
 import styled from "styled-components";
-import searchImage from "../../../img/search-solid.svg";
+import { NavLink } from "react-router-dom";
+import searchImage from "../../img/search-solid.svg";
 import Logo from "../../components/Header/Logo";
 import colors from "../../variables/colors";
 import MovieDetails from "../../components/Header/MovieDetails";
@@ -19,19 +20,18 @@ const useStyles = makeStyles(() =>
 const DetailsPage: React.FC = () => {
   const classes = useStyles();
 
-  const handlerSearch = () => {};
-
   return (
     <MovieInfoColored>
       <Box justifyContent="space-between" display="flex">
         <Logo />
-        <img
-          src={searchImage}
-          alt="search_image"
-          className={classes.searchImage}
-          onClick={handlerSearch}
-          role="presentation"
-        />
+        <NavLink to="/home">
+          <img
+            src={searchImage}
+            alt="search_image"
+            className={classes.searchImage}
+            role="presentation"
+          />
+        </NavLink>
       </Box>
       <MovieDetails />
     </MovieInfoColored>
