@@ -34,7 +34,7 @@ const SearchMovie: React.FC = () => {
     }
   };
 
-  const onSearchMovie = async () => {
+  const onSearchMovie = () => {
     if (!inputValue) {
       dispatch(getAllMovies());
     } else {
