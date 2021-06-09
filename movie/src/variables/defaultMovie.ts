@@ -5,6 +5,7 @@ const defaultValueForm = {
   movieUrl: "",
   genre: "",
   overview: "",
+  vote_average: 0,
 };
 
 export default defaultValueForm;

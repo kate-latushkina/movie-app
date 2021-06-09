@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import Footer from "./components/Footer";
-import Main from "./components/Main";
-import Header from "./components/Header";
+import { Redirect, Route, Switch } from "react-router-dom";
 import DeleteModalContext from "./context/DeleteModalContext";
 import DeleteMovieModal from "./components/modals/DeteleMovieModal";
 import ViewModalContext from "./context/ViewMovieModalContext";
+import HomePage from "./pages/Home";
+import DetailsPage from "./pages/Details";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import ViewMovieModal from "./components/modals/ViewMovieModal";
 
 export const App: React.FC = () => {
   const [context, setContext] = useState(false);
@@ -28,7 +31,13 @@ export const App: React.FC = () => {
       >
         <DeleteModalContext.Provider value={{ context, toggleShowHeading }}>
           <DeleteMovieModal />
-          <Header />
+          <ViewMovieModal />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route path="/home" component={HomePage} />
+            <Route path="/details" component={DetailsPage} />
+            <Redirect to="/" />
+          </Switch>
           <Main />
           <Footer />
         </DeleteModalContext.Provider>

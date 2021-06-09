@@ -7,6 +7,7 @@ export interface ISetMovieAction {
     movieUrl?: string;
     release_date?: string;
     genre?: string | unknown;
+    vote_average?: number;
   };
 }
 export type MovieActions = ISetMovieAction;
