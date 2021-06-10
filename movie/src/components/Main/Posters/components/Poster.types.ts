@@ -5,7 +5,7 @@ export type ImovieItem = {
   title: string;
   vote_average?: number;
   release_date: string;
-  genre_ids?: number[];
+  genre_ids: number[];
 };
 
 export type Tmovies = ImovieItem[];
