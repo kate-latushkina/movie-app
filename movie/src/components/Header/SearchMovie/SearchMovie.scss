@@ -1,0 +1,14 @@
+.search-panel {
+  &_input {
+    padding: 0 20px;
+    &::placeholder {
+      font-size: 17px;
+      padding: 5px 0;
+    }
+  }
+
+  &_button {
+    width: 20%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Logo component should render Logo snapshot 1`] = `
+<div
+  className="MuiGrid-root sc-bdfBwQ hUInJQ"
+>
+  <b>
+    netflix
+  </b>
+  <span>
+    roulette
+  </span>
+</div>
+`;
