@@ -7,9 +7,11 @@ import {
   makeStyles,
 } from "@material-ui/core";
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import { setSorting } from "../../../state/reducers/actionCreators";
 
-const sortingBy = ["Release date", "Named", "Age"];
+const sortingBy = ["Rating", "Release date", "Named"];
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -22,13 +24,18 @@ const useStyles = makeStyles(() =>
 
 const Sorting: React.FC = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  const sortingMovies = (sort: string) => {
+    dispatch(setSorting(sort));
+  };
 
   return (
     <SortingSection>
       <SortLabel id="select-label">Sort by</SortLabel>
       <Select className={classes.select} defaultValue={sortingBy[0]}>
         {sortingBy.map(name => (
-          <Item value={name} key={name}>
+          <Item value={name} key={name} onClick={() => sortingMovies(name)}>
             {name}
           </Item>
         ))}

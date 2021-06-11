@@ -4,12 +4,24 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { getAllMovies } from "../../../state/reducers/actionCreators";
 import { AllMoviesState } from "../../../state/reducers/allMoviesReducer";
-import { selectAllMovies } from "../../../state/reducers/selectors";
+import {
+  combineCurrentFilms,
+  selectAllMovies,
+  selectCategory,
+  selectSorting,
+} from "../../../state/reducers/selectors";
 import Poster from "./components";
 
 const Posters: React.FC = () => {
   const movies: AllMoviesState[] = useSelector(selectAllMovies);
+  const category = useSelector(selectCategory);
+  const sotring = useSelector(selectSorting);
   const dispatch = useDispatch();
+  const getRelewantMovies: AllMoviesState[] = combineCurrentFilms(
+    category,
+    sotring,
+    movies,
+  );
 
   useEffect(() => {
     dispatch(getAllMovies());
@@ -17,10 +29,10 @@ const Posters: React.FC = () => {
 
   return (
     <>
-      <PostersLength>{movies.length} movies found</PostersLength>
+      <PostersLength>{getRelewantMovies.length} movies found</PostersLength>
 
-      {movies ? (
-        movies.map(
+      {getRelewantMovies ? (
+        getRelewantMovies.map(
           ({
             id,
             title,
