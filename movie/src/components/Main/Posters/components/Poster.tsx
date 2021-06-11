@@ -1,5 +1,5 @@
 import { Grid, makeStyles, createStyles } from "@material-ui/core";
-import React, { Dispatch, useCallback, useState } from "react";
+import React, { Dispatch, useCallback, useEffect, useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
@@ -7,10 +7,10 @@ import { ImovieItem } from "./Poster.types";
 import { API_IMG } from "../../../../variables/Api";
 import colors from "../../../../variables/colors";
 import PosterMenu from "../../../modals/PosterMenu";
-import GENRE from "../../../../variables/genre";
 import addInputToState from "../../../../utils/addInputToState";
 import { setMovie } from "../../../../state/reducers/actionCreators";
 import { MovieActions } from "../../../../state/actions/movieAction";
+import getGenreName from "../../../../utils/getGenreName";
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -63,6 +63,7 @@ const Poster: React.ComponentType<ImovieItem> = ({
   const classes = useStyles();
   const [isPosterMenuShow, setPosterMenuShow] = useState(false);
   const movieDispatch = useDispatch<Dispatch<MovieActions>>();
+  const correctGenre = getGenreName(genre_ids);
 
   const mouseLeave = useCallback(() => {
     setPosterMenuShow(false);
@@ -71,12 +72,6 @@ const Poster: React.ComponentType<ImovieItem> = ({
   const mouseEnter = useCallback(() => {
     setPosterMenuShow(true);
   }, [isPosterMenuShow]);
-
-  const correctGenre = genre_ids?.map((genre: number) => {
-    return GENRE.filter(value => value.id === genre).map(genreName => {
-      return genreName.name;
-    });
-  });
 
   const setMovieDetails = () => {
     const correctMovie = addInputToState({
@@ -123,7 +118,7 @@ const Poster: React.ComponentType<ImovieItem> = ({
       <span>{vote_average}</span>
       <ul className={classes.genreBlock}>
         {genre_ids
-          ? correctGenre?.map((genreName: string[]) => {
+          ? correctGenre.map((genreName: string) => {
               return (
                 <li className={classes.genre} key={genreName + String(id)}>
                   {genreName}
