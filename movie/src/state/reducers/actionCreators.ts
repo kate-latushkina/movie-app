@@ -6,6 +6,8 @@ import { Request } from "../../variables/Request";
 
 const SET_MOVIE = "SET_MOVIE";
 const SET_ALL_MOVIES = "SET_ALL_MOVIES";
+const SET_CATEGORY = "SET_CATEGORY";
+const SET_SORTING = "SET_SORTING";
 
 export function setMovie(movie: MovieState) {
   return {
@@ -34,3 +36,17 @@ export const getSearchMovies = (searchValue: string) => async (
   const result = await Request.getRequest(GET_SEARTCH).then(res => res);
   dispatch(setAllMovies(result));
 };
+
+export function setCategory(categoryNew: string) {
+  return {
+    type: SET_CATEGORY,
+    category: categoryNew,
+  };
+}
+
+export function setSorting(sort: string) {
+  return {
+    type: SET_SORTING,
+    sorting: sort,
+  };
+}
